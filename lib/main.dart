@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -77,11 +77,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     'YAAYYY ' + state.counterValue.toString(),
                     style: Theme.of(context).textTheme.headlineLarge,
                   );
+                } else if (state.counterValue == 5) {
+                  return Text(
+                    'HMM, NUMBER 5',
+                    style: Theme.of(context).textTheme.headlineLarge,
+                  );
+                } else {
+                  return Text(
+                    state.counterValue.toString(),
+                    style: Theme.of(context).textTheme.headlineLarge,
+                  );
                 }
-                return Text(
-                  state.counterValue.toString(),
-                  style: Theme.of(context).textTheme.headlineLarge,
-                );
               },
             ),
             const SizedBox(
